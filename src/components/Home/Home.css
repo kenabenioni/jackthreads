@@ -1,0 +1,5 @@
+.home_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

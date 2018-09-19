@@ -6,8 +6,8 @@ class Home extends Component {
     return (
       <div className="Home">
       <div className="home_img">
-        <img src="https://cdn.shopify.com/s/files/1/2160/1407/files/FALL-TEES-JT-HOMEPAGE_540x.jpg?v=1536934315" alt=""/>
-        <img src="https://cdn.shopify.com/s/files/1/2160/1407/files/CHAMP-FALL-18-HOMEPAGE_540x.jpg?v=1534433464" alt=""/>
+        <img  className='falltees' src="https://cdn.shopify.com/s/files/1/2160/1407/files/FALL-TEES-JT-HOMEPAGE_1728x.jpg?v=1536934315" alt=""/>
+        <img className='fallforward' src="https://cdn.shopify.com/s/files/1/2160/1407/files/CHAMP-FALL-18-HOMEPAGE_1728x.jpg?v=1534433464" alt=""/>
       </div>
       </div>
     );

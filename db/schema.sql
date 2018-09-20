@@ -35,8 +35,8 @@ img_url text,
 product_id integer references shoes(product_id),
 color_id integer references shoe_color(color_id)
 )
-insert into clothing_img (img_url, product_id, color_id)
-values ('https://cdn.shopify.com/s/files/1/2160/1407/products/JT1250050_-_WHT-4_677x848.jpg?v=1527779892', 1, 1)
+insert into clothing_img (img_url, product_id, color_id, display_img)
+values ('https://cdn.shopify.com/s/files/1/2160/1407/products/OY218469-KAL_2_1800x2250.jpg?v=1536695482', 15, 25, null)
 
 create table clothing_size (
 size_id serial primary key, 

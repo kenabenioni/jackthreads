@@ -1,0 +1,23 @@
+.nav-small {
+    display: none;
+}
+.nav-full {
+    display: flex;
+    align-items: baseline;
+    
+}
+
+.logotext-small {
+    width: 76px;
+}
+
+@media (max-width: 766px) {
+    .nav-small {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+    .nav-full {
+        display: none;
+    }
+  }

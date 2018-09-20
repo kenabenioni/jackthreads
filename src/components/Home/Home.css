@@ -1,6 +1,36 @@
 .home_img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.falltees {
+  width: 100vw;
+}
+
+.fallforward {
+  width: 100vw;
+}
+
+.home_img_large {
+  display: none;
+}
+
+.falltees_large {
+  width: 100vw;
+}
+
+.fallforward_large {
+  width: 100vw;
+}
+
+@media (min-width: 767px) {
+  .home_img {
+    display: none;
+  }
+  .home_img_large {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
 }
-

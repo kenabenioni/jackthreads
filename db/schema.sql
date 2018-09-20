@@ -11,11 +11,11 @@ CREATE TABLE accessories (
   brand varchar(40),
   category varchar(40),
   subcategory varchar(40),
-  price integer,
+  price text,
   details text
 );
 INSERT INTO clothing (name, brand, category, subcategory, price, details)
-VALUES ('Happy Patch Tee', 'JackThreads', 'Tees+Tanks', 'V Neck', 11.99, '100% Cotton. Machine Wash.' )
+VALUES ('Happy Patch Tee', 'JackThreads', 'Tees+Tanks', 'V Neck', '11.99', '100% Cotton. Machine Wash.' )
 
 
 

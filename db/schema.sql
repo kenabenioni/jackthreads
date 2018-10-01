@@ -1,8 +1,8 @@
 CREATE TABLE users (
   user_id SERIAL PRIMARY KEY,
-  first_name varchar(40),
-  last_name varchar(40),
+  user_name text,
   email varchar(40),
+  picture text,
   auth_id text
 );
 CREATE TABLE accessories (
@@ -44,15 +44,24 @@ product_id integer references clothing(product_id),
 name varchar(10)
 )
 
+create table clothing_bag (
+bag_id serial primary key, 
+product_id integer references clothing(product_id), 
+img_id integer references clothing_img(img_id), 
+color_id integer references clothing_color(color_id),
+user_id integer references users(user_id)
+)
 
-tables = 
-users
-clothing
-accessories
-shoes
-clothing_color
-accessories_color
-shoes_color
+insert into clothing_bag (product_id, img_id, color_id) values ()
+
+select * from clothing_img
+where product_id = 1 and color_id = 1
+
+
+select * from clothing_bag
+join clothing on clothing.product_id = clothing_bag.product_id
+where user_id = 1
+
 
 
 

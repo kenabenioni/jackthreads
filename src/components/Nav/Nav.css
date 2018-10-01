@@ -2,13 +2,66 @@
     display: none;
 }
 .nav-full {
+    width: 100%;
     display: flex;
-    align-items: baseline;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
     
 }
 
 .logotext-small {
     width: 76px;
+}
+.logotext {
+    width: 76px;
+    padding: 20px;
+    padding-left: 30px;
+}
+.navright {
+   padding-right: 20px;
+    
+}
+.navleft {
+    display: flex;
+    align-items: center;
+}
+
+.left-button {
+    padding-left: 48px;
+    padding-right: 35px;
+}
+
+#allbuttons {
+    border: none;
+    font-family: Graphik, Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75429em;
+    letter-spacing: .08em;
+    outline: 0;
+}
+
+
+
+
+.navinput {
+    font-family: Graphik, Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.61429em;
+    letter-spacing: .08em;
+    width: 280px;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #f30;
+    padding: 0; 
 }
 
 @media (max-width: 766px) {
@@ -20,4 +73,5 @@
     .nav-full {
         display: none;
     }
+
   }

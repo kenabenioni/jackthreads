@@ -1,0 +1,65 @@
+.Footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+p {
+    border: none;
+    font-family: Graphik, Helvetica,Arial,sans-serif;
+    
+    text-transform: uppercase;
+    /* font-weight: 700; */
+    font-size: 0.65429em;
+    letter-spacing: .08em;
+    outline: 0;
+}
+
+.title {
+    font-weight: 700;
+
+}
+
+.stayconnected {
+    width: 400px;
+    padding-left: 45px;
+    padding-right: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.discounts {
+    padding-left: 45px;
+    padding-right: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.customerservice {
+    padding-left: 45px;
+    padding-right: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.signup {
+    flex-direction: row;
+}
+
+.footerinput {
+    font-family: Graphik, Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.61429em;
+    letter-spacing: .08em;
+    width: 200px;
+}
+
+.signupbutton {
+
+}

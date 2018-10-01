@@ -9,7 +9,9 @@ class App extends Component {
     return (
       <div className="App">
       <Nav/>
+      <div>
         {routes}
+      </div>
       <Footer/>
       </div>
     );

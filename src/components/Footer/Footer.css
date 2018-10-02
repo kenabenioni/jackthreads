@@ -9,7 +9,7 @@
     
 }
 
-p {
+#footer-p {
     border: none;
     font-family: Graphik, Helvetica,Arial,sans-serif;
     
@@ -18,6 +18,8 @@ p {
     font-size: 0.65429em;
     letter-spacing: .08em;
     outline: 0;
+    text-decoration: none;
+    
 }
 
 .title {

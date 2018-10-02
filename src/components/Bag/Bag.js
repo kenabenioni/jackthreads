@@ -24,7 +24,8 @@ class Bag extends Component {
   handleDelete(element) {
     axios
       .delete(`/api/delete/${element}`)
-      .then(res => this.props.addAllToBag(res.data));
+      .then(res => {this.props.addAllToBag(res.data)
+      this.totalBag()});
   }
   totalBag() {
     console.log("fired");

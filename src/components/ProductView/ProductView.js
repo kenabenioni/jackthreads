@@ -48,6 +48,7 @@ class ProductView extends Component {
   }
  
   render() {
+    console.log(this.state);
     return (
       <div className="ProductView">
         <img className="displayimg" src={this.state.displayImg} alt=""/>

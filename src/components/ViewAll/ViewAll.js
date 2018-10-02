@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ViewAll.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import {View} from 'mdbreact';
 
 class ViewAll extends Component {
   constructor(props) {
@@ -39,14 +40,16 @@ class ViewAll extends Component {
     } = this.props;
 
     return (
-      <Link to={`/products/${id}/${img_id}`}>
+      <Link to={`/products/${id}/${img_id}`} style={{textDecoration: 'none'}}>
         <div className="ViewAll">
         <div className="product">
+        
           <img src={img} className="product_img" alt="" />
+        
           <div>
-            <p>{brand}</p>
-            <p>{name}</p>
-            <p>${price}</p>
+            <p className="brand" id="viewall-p">{brand}</p>
+            <p className="name" id="viewall-p">{name}</p>
+            <p className="price" id="viewall-p">${price}</p>
           </div>
         </div>
         </div>

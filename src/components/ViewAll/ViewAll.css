@@ -1,5 +1,6 @@
 .ViewAll {
     display: flex;
+    text-decoration: none;
     
 }
 
@@ -8,6 +9,9 @@
     width: 18vw; 
     padding: 10px;
 }
+
+
+
 
 @media(max-width: 1200px) {
     .product_img {
@@ -36,6 +40,35 @@
 }
 
 
-p {
+.name {
+    border: none;
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 0.65429em;
+    text-decoration-color: black;
+    letter-spacing: .08em;
+    outline: 0;
     text-decoration: none;
+}
+
+.brand {
+    border: none;
+    font-family: Graphik, Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.68429em;
+    letter-spacing: .08em;
+    outline: 0;
+}
+
+.price {
+    border: none;
+    font-family: Graphik, Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8em;
+    letter-spacing: .08em;
+    outline: 0;
 }

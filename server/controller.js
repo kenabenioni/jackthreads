@@ -1,3 +1,6 @@
+// require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_SECRET);
+
 module.exports = {
   getClothing: (req, res) => {
     const db = req.app.get("db");
@@ -70,5 +73,29 @@ module.exports = {
         console.log(err);
         res.status(500).send(err);
       });
-  }
+  },
+  handlePayment: (req, res) => {
+    const db = req.app.get("db");
+    const {user_id} = req.session.user
+    const { amount, token:{id}} = req.body
+    stripe.charges.create(
+        {
+            amount: amount,
+            currency: "usd",
+            source: id,
+            description: "money yummy yummy"
+        },
+        (err, charge) => {
+            if(err) {
+                console.log(err)
+                return res.status(500).send(err)
+            } else {
+                console.log(charge)
+                db.clear_bag({user_id}).then(response=>{
+                  res.status(200).send([response, charge]);
+                })
+            }
+        }
+    )
+}
 };

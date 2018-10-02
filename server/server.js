@@ -14,7 +14,9 @@ const express = require("express"),
     REACT_APP_DOMAIN,
     CLIENT_SECRET,
     REACT_APP_CLIENT_ID,
-    ENVIRONMENT
+    ENVIRONMENT,
+    STRIPE_SECRET,
+    REACT_APP_STRIPE_KEY
   } = process.env;
 
   app.use(bodyParser.json());
@@ -95,4 +97,5 @@ const express = require("express"),
   app.get('/api/threeimgs', ctrl.getImgs)
   app.get('/api/getbag', ctrl.getbag)
   app.post("/api/addtocart", ctrl.addToClothingBag)
+  app.post('/api/payment', ctrl.handlePayment)
   app.delete('/api/delete/:element', ctrl.deleteFromBag)

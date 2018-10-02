@@ -3,6 +3,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import "./Bag.css";
 import { addAllToBag } from "../../ducks/reducer";
+import StripeCheckout from 'react-stripe-checkout'
 
 class Bag extends Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class Bag extends Component {
   componentDidMount() {
     axios.get("/api/getbag").then(res => {
         this.props.addAllToBag(res.data)
-        this.totalBag();
+        console.log(res.data);
+        res.data[0] ? this.totalBag() : null
     });
   }
 
@@ -37,9 +39,14 @@ class Bag extends Component {
     console.log(reducedTotal, priceArr);
     this.setState({ price: reducedTotal });
   }
+  onToken = (token) => {
+    token.card = void 0
+    axios.post('/api/payment', {token, amount: this.state.price * 100}).then(res => {
+        this.props.addAllToBag([])
+    })
+}
 
   render() {
-    console.log(this.state);
     let bagToDisplay = this.props.bag[0] ? (
       this.props.bag.map((e, i) => {
         return (
@@ -53,7 +60,7 @@ class Bag extends Component {
         );
       })
     ) : (
-      <div>Loading...</div>
+      <div>Go Get Some Stuff Dude...</div>
     );
     return (
       <div>
@@ -61,7 +68,14 @@ class Bag extends Component {
         <h4>Total: </h4>
         <h3>${this.state.price}</h3>
         <hr />
-        <button>Checkout</button>
+        <StripeCheckout
+                name="Jack Threads"
+                description="Give Me Your Money"
+                image="https://cdn.shopify.com/s/files/1/2160/1407/files/JT_only_logo_2_48x@2x.png?v=1500308651"
+                token= {this.onToken}
+                stripeKey={process.env.REACT_APP_STRIPE_KEY}
+                amount={this.state.price  * 100}
+            />
       </div>
     );
   }

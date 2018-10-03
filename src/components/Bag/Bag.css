@@ -1,3 +1,20 @@
 .bag-img {
     width: 300px;
 }
+.sidebar {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    background-color: white;
+    overflow: scroll;
+    height: 100vh;
+    transition: 0.5s;
+    z-index: 11;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.show-sidebar {
+    right: 0;
+}
+

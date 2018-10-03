@@ -43,8 +43,11 @@ class ViewAll extends Component {
       <Link to={`/products/${id}/${img_id}`} style={{textDecoration: 'none'}}>
         <div className="ViewAll">
         <div className="product">
-        
+        <div className="container">
+          <div className="img_holder">
           <img src={img} className="product_img" alt="" />
+          </div>
+        </div>
         
           <div>
             <p className="brand" id="viewall-p">{brand}</p>

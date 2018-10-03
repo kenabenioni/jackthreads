@@ -8,7 +8,7 @@ const ADD_ALL_TO_BAG = "ADD_ALL_TO_BAG";
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TO_BAG:
-      return Object.assign({}, state, { bag: [...state.bag, action.payload] });
+      return Object.assign({}, state, { bag: action.payload });
 
     case ADD_ALL_TO_BAG:
       return Object.assign({}, state, { bag: action.payload });
@@ -19,6 +19,7 @@ export default function reducer(state = initialState, action) {
 }
 
 export function addToBag(product) {
+  console.log(product);
   return {
     type: ADD_TO_BAG,
     payload: product

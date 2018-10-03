@@ -1,74 +1,98 @@
 .ViewAll {
-    display: flex;
-    text-decoration: none;
-    
+  display: flex;
+  text-decoration: none;
 }
-
+/* .container {
+  position: relative;
+  width: 18vw;
+  height: 37vh;
+  overflow: hidden;
+}
+.img_holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.img_holder img {
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.container:hover .img_holder img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+} */
 
 .product_img {
-    width: 18vw; 
+  width: 18vw;
+  /* height: 37vh; */
+  padding: 10px;
+}
+
+@media (max-width: 1200px) {
+  .product_img {
+    width: 22vw;
     padding: 10px;
+    /* height: 340px; */
+  }
+  /* .container {
+    position: relative;
+    width: 22vw;
+    height: 340px;
+    overflow: hidden;
+  } */
 }
 
-
-
-
-@media(max-width: 1200px) {
-    .product_img {
-        width: 22vw;
-        padding: 10px;
-    }
+@media (max-width: 900px) {
+  .product_img {
+    width: 27vw;
+    padding: 10px;
+    /* height: 100%; */
+  }
 }
-
-@media(max-width: 900px) {
-    .product_img {
-        width: 27vw;
-        padding: 10px;
-    }
+@media (max-width: 790px) {
+  .product_img {
+    width: 39vw;
+    padding: 10px;
+    /* height: 100%; */
+  }
 }
-@media(max-width: 790px) {
-    .product_img {
-        width: 39vw;
-        padding: 10px;
-    }
+@media (max-width: 530px) {
+  .product_img {
+    width: 65vw;
+    padding: 10px;
+    /* height: 100%; */
+  }
 }
-@media(max-width: 530px) {
-    .product_img {
-        width: 65vw;
-        padding: 10px;
-    }
-}
-
 
 .name {
-    border: none;
-    font-family: inherit;
-    text-transform: uppercase;
-    font-size: 0.65429em;
-    text-decoration-color: black;
-    letter-spacing: .08em;
-    outline: 0;
-    text-decoration: none;
+  border: none;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 0.65429em;
+  text-decoration-color: black;
+  letter-spacing: 0.08em;
+  outline: 0;
+  text-decoration: none;
 }
 
 .brand {
-    border: none;
-    font-family: Graphik, Helvetica,Arial,sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 0.68429em;
-    letter-spacing: .08em;
-    outline: 0;
+  border: none;
+  font-family: Graphik, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.68429em;
+  letter-spacing: 0.08em;
+  outline: 0;
 }
 
 .price {
-    border: none;
-    font-family: Graphik, Helvetica,Arial,sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 0.8em;
-    letter-spacing: .08em;
-    outline: 0;
+  border: none;
+  font-family: Graphik, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  letter-spacing: 0.08em;
+  outline: 0;
 }

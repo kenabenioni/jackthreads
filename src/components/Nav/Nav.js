@@ -81,9 +81,8 @@ class Nav extends Component {
             <button onClick={this.login} id="allbuttons">
               Login
             </button>
-            {/* <Link to={"/bag"}> */}
+            
               <button id="allbuttons" onClick={setToggle}>Bag</button>
-            {/* </Link> */}
           </div>
         </div>
         <hr />

@@ -64,6 +64,24 @@ class ProductView extends Component {
           <p className="product-brand" id="thep">{this.state.brand}</p>
           <p className="product-name" id="thep">{this.state.name}</p>
           <p className="product-price" id="thep">${this.state.price}</p>
+          <select name="size" id="">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          </select>
+          <select name="quantity" id="">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          </select>
           <div className="buttondiv">
           <button className="bagbutton" onClick={() => this.addToBag()}>
             Add to Bag

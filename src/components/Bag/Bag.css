@@ -1,5 +1,10 @@
+.toptop {
+    background-color: #f5f5f5;
+}
+
 .bag-img {
-    width: 300px;
+    width: 200px;
+    padding-right: 10px;
 }
 .sidebar {
     position: fixed;
@@ -10,11 +15,95 @@
     height: 100vh;
     transition: 0.5s;
     z-index: 11;
-    padding-right: 10px;
-    padding-left: 10px;
+    /* padding-right: 10px; */
+    /* padding-left: 10px; */
+    width: 360px;
+    display: flex;
+    flex-direction: column;
 }
 
 .show-sidebar {
     right: 0;
+}
+
+.topbar {
+    display: flex;
+    align-items: baseline;
+    padding-left: 5px;
+}
+
+.totalprice {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stripe {
+    padding-bottom: 15px;
+}
+
+.bagitem {
+    display: flex;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+.bag-brand {
+    font-family: Graphik, Helvetica,Arial,sans-serif; 
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.76em;
+    letter-spacing: .04em;
+    color: black;
+    margin: 0;
+}
+
+.bag-name {
+    font-family: Graphik, Helvetica,Arial,sans-serif; 
+    /* text-transform: uppercase; */
+    font-weight: 340;
+    font-size: 0.96em;
+    letter-spacing: .04em;
+    color: black;
+    margin: 0;
+    padding-top: 12px;
+}
+
+.bag-price {
+    font-family: Graphik, Helvetica,Arial,sans-serif; 
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1em;
+    letter-spacing: .04em;
+    color: black;
+    margin: 0;
+    padding-top: 12px;
+}
+
+.remove {
+    border: none;
+    font-family: Graphik, Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.75429em;
+    letter-spacing: .08em;
+    outline: 0;
+    padding-top: 12px;
+    padding-left: 0;
+}
+
+.yourbag {
+    font-family: Graphik, Helvetica,Arial,sans-serif; 
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2em;
+    letter-spacing: .06em;
+}
+
+.thex {
+    border: none;
+    background-color: #f5f5f5;
+    font-size: 1.7em;
+    font-family: 'Kodchasan', sans-serif;
 }
 

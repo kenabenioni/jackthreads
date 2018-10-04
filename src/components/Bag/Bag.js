@@ -93,12 +93,17 @@ render() {
   let bagToDisplay = this.props.bag[0] ? (
     this.props.bag.map((e, i) => {
       return (
+        <div className="bagitem">
         <div>
           <img src={e.img_url} alt="" className="bag-img" />
-          <p>{e.brand}</p>
-          <p>{e.name}</p>
-          <p>${e.price}</p>
-          <button onClick={() => this.handleDelete(e.bag_id)}>Delete</button>
+        </div>
+        <div className="tags">
+          <p className="bag-brand">{e.brand}</p>
+          <p className="bag-name">{e.name}</p>
+          <p className="bag-price">${e.price}</p>
+          <button onClick={() => this.handleDelete(e.bag_id)} className="remove">Remove</button>
+        </div>
+        <hr/>
         </div>
       );
     })
@@ -107,11 +112,18 @@ render() {
   );
   return (
     <div className={sidebarToggle ? "sidebar show-sidebar" : "sidebar"}>
-      <button onClick={setToggle}>X</button>
-      {bagToDisplay}
+    <div className="toptop">
+    <div className="topbar">
+    <div className="xbutton">
+      <button onClick={setToggle} className="thex">X</button>
+    </div>
+    <h4 className="yourbag">Your Bag</h4>
+    </div>
+    <div className="totalprice">
       <h4>Total: </h4>
       <h3>${this.state.price}</h3>
-      <hr />
+    </div>
+      <div className="stripe">
       <StripeCheckout
               name="Jack Threads"
               description="Give Me Your Money"
@@ -120,6 +132,9 @@ render() {
               stripeKey={process.env.REACT_APP_STRIPE_KEY}
               amount={this.state.price  * 100}
           />
+      </div>
+    </div>
+      {bagToDisplay}
     </div>
   );
 }

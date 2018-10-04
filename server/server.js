@@ -6,6 +6,8 @@ const express = require("express"),
   session = require("express-session"),
   axios = require("axios");
 
+
+
   const app = express();
   const PORT = 3005;
 
@@ -19,6 +21,7 @@ const express = require("express"),
     REACT_APP_STRIPE_KEY
   } = process.env;
 
+  app.use( express.static( `${__dirname}/../build` ) );
   app.use(bodyParser.json());
   app.use(
     session({
@@ -80,7 +83,7 @@ const express = require("express"),
   
   app.get('/logout', (req, res) => {
     req.session.destroy();
-    res.redirect('http://localhost:3000/')
+    res.redirect(process.env.LOCAL_HOST)
   })
 
 

@@ -44,7 +44,18 @@ const express = require("express"),
       next();
     }
   })
+
+  function mustLogin(req, res, next){
+    if (req.session.user){
+      next()
+    }
+    else {
+      res.status(500).send("must login")
+    }
+  }
   
+  
+
   app.get('/auth/callback', async (req, res) => {
     let payload = {
       client_id: REACT_APP_CLIENT_ID,
@@ -98,7 +109,7 @@ const express = require("express"),
   app.get('/api/all-products', ctrl.getClothing)
   app.get("/api/product", ctrl.getProduct) 
   app.get('/api/threeimgs', ctrl.getImgs)
-  app.get('/api/getbag', ctrl.getbag)
+  app.get('/api/getbag', mustLogin, ctrl.getbag)
   app.post("/api/addtocart", ctrl.addToClothingBag)
   app.post('/api/payment', ctrl.handlePayment)
   app.delete('/api/delete/:element', ctrl.deleteFromBag)

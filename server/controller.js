@@ -27,9 +27,9 @@ module.exports = {
   },
   addToClothingBag: (req, res) => {
     const db = req.app.get("db");
-    const { product_id, color_id, img_id } = req.body;
+    const { product_id, color_id, img_id, size, quantity } = req.body;
     const { user_id } = req.session.user;
-    db.add_clothing_to_bag({ product_id, color_id, img_id, user_id })
+    db.add_clothing_to_bag({ product_id, color_id, img_id, user_id, size, quantity })
       .then(response => {
         res.status(200).send(response);
       })

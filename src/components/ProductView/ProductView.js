@@ -17,7 +17,9 @@ class ProductView extends Component {
       product_id: 1,
       img_id: 1,
       color_id: 1,
-      imgs: []
+      imgs: [],
+      size: "S",
+      quantity: 1
     };
   }
 
@@ -47,16 +49,22 @@ class ProductView extends Component {
       .post("/api/addtocart", {
         product_id: this.state.product_id,
         img_id: this.state.img_id,
-        color_id: this.state.color_id
+        color_id: this.state.color_id,
+        size: this.state.size,
+        quantity: this.state.quantity
       })
       .then(response => { 
-        console.log(response.data);
         this.props.addToBag(response.data);
       });
   }
-
+  handleSize(val){
+    this.setState({size: val})
+  }
+  handleQuantity(val){
+    let numVal = Number(val)
+    this.setState({quantity: numVal})
+  }
   render() {
-    console.log(this.state);
     return (
       <div className="ProductView">
         <img className="displayimg" src={this.state.displayImg} alt="" />
@@ -64,23 +72,23 @@ class ProductView extends Component {
           <p className="product-brand" id="thep">{this.state.brand}</p>
           <p className="product-name" id="thep">{this.state.name}</p>
           <p className="product-price" id="thep">${this.state.price}</p>
-          <select name="size" id="">
+          <select name="size" id="" onChange={(e)=>{this.handleSize(e.target.value)}}>
           <option value="S">S</option>
           <option value="M">M</option>
           <option value="L">L</option>
           <option value="XL">XL</option>
           </select>
-          <select name="quantity" id="">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
+          <select name="quantity" id="" onChange={(e)=>{this.handleQuantity(e.target.value)}}>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+          <option value={6}>6</option>
+          <option value={7}>7</option>
+          <option value={8}>8</option>
+          <option value={9}>9</option>
+          <option value={10}>10</option>
           </select>
           <div className="buttondiv">
           <button className="bagbutton" onClick={() => this.addToBag()}>

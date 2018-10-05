@@ -2,16 +2,14 @@ import React, { Component } from "react";
 import "./Nav.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Sidebar from "react-sidebar";
+
 
 class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {},
-      sidebarOpen: false
+      user: {}
     };
-    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
   async componentDidMount() {
     let res = await axios.get("/api/user-data");
@@ -25,12 +23,10 @@ class Nav extends Component {
 
     window.location = `https://${REACT_APP_DOMAIN}/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${url}&response_type=code`;
   }
-  onSetSidebarOpen(open) {
-    this.setState({ sidebarOpen: open });
-  }
 
   render() {
     const {setToggle} = this.props
+    console.log(this.state.user);
     return (
       <div className="nav">
         <div className="nav-small">

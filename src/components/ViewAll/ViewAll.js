@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./ViewAll.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import {View} from 'mdbreact';
 
 class ViewAll extends Component {
   constructor(props) {
@@ -30,13 +29,9 @@ class ViewAll extends Component {
       name,
       id,
       brand,
-      category,
-      color_id,
-      details,
       img_id,
       img,
-      price,
-      subcategory
+      price
     } = this.props;
 
     return (

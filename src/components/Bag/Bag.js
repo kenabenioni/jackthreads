@@ -18,12 +18,20 @@ class Bag extends Component {
         this.props.addToBag(res.data)
         console.log(res.data);
         res.data[0] ? this.totalBag() : null
-    });
+    })
+    .catch(()=>{this.login()})
   }
   componentDidUpdate(prevProps){
     if(this.props.bag.length !== prevProps.bag.length){
       this.props.bag.length > 0 ? this.totalBag() : this.setState({price: 0.00})
     }
+  }
+  login() {
+    let { REACT_APP_DOMAIN, REACT_APP_CLIENT_ID } = process.env;
+
+    let url = `${encodeURIComponent(window.location.origin)}/auth/callback`;
+
+    window.location = `https://${REACT_APP_DOMAIN}/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${url}&response_type=code`;
   }
 
   handleDelete(element) {
@@ -34,17 +42,16 @@ class Bag extends Component {
     });
   }
   totalBag() {
-    console.log("fired");
     let priceArr = [];
     let total = 0;
-    console.log(this.props.bag);
     this.props.bag.forEach((e, i) => {
       let price = Number(e.price);
-      priceArr.push(price);
+      let quantity = e.quantity;
+      let priceAndQuantity = price * quantity
+      priceArr.push(priceAndQuantity);
     });
     let reducedTotal = priceArr.reduce((a, b)=>a + b).toFixed(2)
-    console.log(reducedTotal, priceArr);
-    this.setState({ price: reducedTotal });
+    this.setState({ price: reducedTotal});
   }
   onToken = (token) => {
     token.card = void 0
@@ -100,7 +107,16 @@ render() {
         <div className="tags">
           <p className="bag-brand">{e.brand}</p>
           <p className="bag-name">{e.name}</p>
-          <p className="bag-price">${e.price}</p>
+          <p className="bag-price">${(e.price * e.quantity).toFixed(2)}</p>
+          <select name="" id="">
+          <option value="">{e.size}</option>
+          {e.size === "S" ? null : <option value="S">S</option>}
+          {e.size === "M" ? null : <option value="M">M</option>}
+          {e.size === "L" ? null : <option value="L">L</option>}
+          {e.size === "XL" ? null : <option value="XL">XL</option>}
+          </select>
+          {/* <p>{e.size}</p> */}
+          <p>{e.quantity}</p>
           <button onClick={() => this.handleDelete(e.bag_id)} className="remove">Remove</button>
         </div>
         <hr/>

@@ -19,7 +19,6 @@ export default function reducer(state = initialState, action) {
 }
 
 export function addToBag(product) {
-  console.log(product);
   return {
     type: ADD_TO_BAG,
     payload: product

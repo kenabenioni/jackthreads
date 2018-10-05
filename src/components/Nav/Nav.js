@@ -77,7 +77,7 @@ class Nav extends Component {
             <input type="text" placeholder="Search" className="navinput" />
             {this.state.user.user_name ? (
               <div>
-            <a href={`${process.env.REACT_APP_SERVER_URL}/logout`}>
+            <a href={`/logout`}>
             <button id="allbuttons" className="loginbutton">
               Logout
             </button>

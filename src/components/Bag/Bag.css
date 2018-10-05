@@ -107,3 +107,10 @@
     font-family: 'Kodchasan', sans-serif;
 }
 
+.quan {
+    padding-bottom: 10px;
+}
+
+.stripe-button-el {
+    display: none;
+}

@@ -27,9 +27,19 @@
     padding-left: 30px;
 }
 .navright {
+    display: flex;
    padding-right: 20px;
-    
+   align-items: center;
 }
+.bag {
+    padding-bottom: 0;
+}
+.loginbutton {
+    padding-bottom: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
 .navleft {
     display: flex;
     align-items: center;

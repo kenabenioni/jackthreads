@@ -23,6 +23,7 @@ class Nav extends Component {
 
     window.location = `https://${REACT_APP_DOMAIN}/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${url}&response_type=code`;
   }
+  
 
   render() {
     const {setToggle} = this.props
@@ -74,11 +75,21 @@ class Nav extends Component {
           </div>
           <div className="navright">
             <input type="text" placeholder="Search" className="navinput" />
-            <button onClick={this.login} id="allbuttons">
-              Login
+            {this.state.user.user_name ? (
+              <div>
+            <a href={`${process.env.REACT_APP_SERVER_URL}/logout`}>
+            <button id="allbuttons" className="loginbutton">
+              Logout
             </button>
+            </a>
+              </div>
+            ) : (
+              <div>
+                <button onClick={this.login} id="allbuttons" className="loginbutton">Login</button>
+              </div>
+            )}
             
-              <button id="allbuttons" onClick={setToggle}>Bag</button>
+              <button id="allbuttons" onClick={setToggle} className="bag">Bag</button>
           </div>
         </div>
         <hr />

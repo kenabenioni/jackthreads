@@ -55,7 +55,10 @@ class ProductView extends Component {
       })
       .then(response => { 
         this.props.addToBag(response.data);
-      });
+      })
+      .catch(()=>{
+        alert("You must be logged in to add to cart!")
+      })
   }
   handleSize(val){
     this.setState({size: val})

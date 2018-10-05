@@ -110,6 +110,6 @@ const express = require("express"),
   app.get("/api/product", ctrl.getProduct) 
   app.get('/api/threeimgs', ctrl.getImgs)
   app.get('/api/getbag', mustLogin, ctrl.getbag)
-  app.post("/api/addtocart", ctrl.addToClothingBag)
+  app.post("/api/addtocart", mustLogin, ctrl.addToClothingBag)
   app.post('/api/payment', ctrl.handlePayment)
   app.delete('/api/delete/:element', ctrl.deleteFromBag)

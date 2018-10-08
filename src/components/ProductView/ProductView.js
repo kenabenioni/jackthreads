@@ -31,6 +31,7 @@ class ProductView extends Component {
         }`
       )
       .then(response => {
+        console.log(response.data);
         this.setState({
           product: response.data,
           displayImg: response.data[0].img_url,
@@ -40,6 +41,7 @@ class ProductView extends Component {
           product_id: response.data[0].product_id,
           img_id: response.data[0].img_id,
           color_id: response.data[0].color_id
+          
         });
       });
   }

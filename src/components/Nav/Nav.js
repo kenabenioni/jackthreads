@@ -27,7 +27,7 @@ class Nav extends Component {
 
   render() {
     const {setToggle} = this.props
-    console.log(this.state.user);
+    // console.log(this.state.user);
     return (
       <div className="nav">
         <div className="nav-small">
@@ -77,7 +77,7 @@ class Nav extends Component {
             <input type="text" placeholder="Search" className="navinput" />
             {this.state.user.user_name ? (
               <div>
-            <a href={`/logout`}>
+            <a href={`${process.env.REACT_APP_SERVER_URL}/logout`}>
             <button id="allbuttons" className="loginbutton">
               Logout
             </button>

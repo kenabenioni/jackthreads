@@ -97,5 +97,33 @@ module.exports = {
             }
         }
     )
+},
+sizeChange: (req, res) => {
+  const db = req.app.get("db");
+  const {size, bag_id} = req.body
+  const {user_id} = req.session.user
+  console.log(req.body);
+  db.size_change([size, bag_id, user_id])
+  .then(response => {
+    res.status(200).send(response);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).send(err);
+  })
+},
+quanChange: (req, res) => {
+  const db = req.app.get("db");
+  const {quan, bag_id} = req.body
+  const {user_id} = req.session.user
+  console.log(req.body);
+  db.quan_change([quan, bag_id, user_id])
+  .then(response => {
+    res.status(200).send(response);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).send(err);
+  })
 }
-};
+}

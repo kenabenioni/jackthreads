@@ -1,3 +1,6 @@
+button {
+    cursor: pointer;
+}
 .ProductView {
     display: flex;
     flex-direction: row;
@@ -33,7 +36,7 @@
     font-weight: 500;
     font-size: 1.3em;
     letter-spacing: .04em;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
 }
 
 .tags {
@@ -49,9 +52,26 @@
 
 
 .bagbutton {
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 15px;
+    padding-left: 80px;
+    padding-right: 80px;
     background-color: orangered;
     color: white;
+    cursor: pointer;
+    font-size: 17px;
+    text-transform: uppercase;
+    outline: 0;
+}
+.size {
+    border: none;
+    /* padding: 10px; */
+    margin: 10px;
+    font-size: 16px;
+    outline: 0;
+}
+.quantity {
+    border: none;
+    margin: 10px;
+    font-size: 16px;
+    outline: 0;
 }

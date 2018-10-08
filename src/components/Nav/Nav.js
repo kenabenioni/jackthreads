@@ -31,17 +31,19 @@ class Nav extends Component {
     return (
       <div className="nav">
         <div className="nav-small">
-          <button>Menu</button>
+          <button id="allbuttons">Menu</button>
           <div className="logotextdiv_small">
+          <Link to={"/"}>
             <img
               src="https://cdn.shopify.com/s/files/1/2160/1407/files/JT_Full_Logo_RGB_75x@2x.png?v=1500308626"
               className="logotext-small"
               alt=""
             />
+            </Link>
           </div>
           <div className="searchbag">
-            <button>Search</button>
-            <button>Bag</button>
+            <button id="allbuttons">Search</button>
+            <button id="allbuttons">Bag</button>
           </div>
         </div>
         <div className="nav-full">

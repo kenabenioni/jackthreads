@@ -105,6 +105,7 @@
     background-color: #f5f5f5;
     font-size: 1.7em;
     font-family: 'Kodchasan', sans-serif;
+    outline: 0;
 }
 
 .quan {
@@ -113,4 +114,18 @@
 
 .stripe-button-el {
     display: none;
+}
+
+.bag-quan {
+    border: none;
+    margin: 6px;
+    font-size: 12px;
+    outline: 0;
+}
+
+.bag-size {
+    border: none;
+    margin: 6px;
+    font-size: 12px;
+    outline: 0;
 }

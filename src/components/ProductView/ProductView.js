@@ -75,13 +75,15 @@ class ProductView extends Component {
           <p className="product-brand" id="thep">{this.state.brand}</p>
           <p className="product-name" id="thep">{this.state.name}</p>
           <p className="product-price" id="thep">${this.state.price}</p>
-          <select name="size" id="" onChange={(e)=>{this.handleSize(e.target.value)}}>
+          <div className="selects">
+          {/* <label htmlFor="size">Size:</label> */}
+          <select className="size" id="" onChange={(e)=>{this.handleSize(e.target.value)}}>
           <option value="S">S</option>
           <option value="M">M</option>
           <option value="L">L</option>
           <option value="XL">XL</option>
           </select>
-          <select name="quantity" id="" onChange={(e)=>{this.handleQuantity(e.target.value)}}>
+          <select className="quantity" id="" onChange={(e)=>{this.handleQuantity(e.target.value)}}>
           <option value={1}>1</option>
           <option value={2}>2</option>
           <option value={3}>3</option>
@@ -93,6 +95,7 @@ class ProductView extends Component {
           <option value={9}>9</option>
           <option value={10}>10</option>
           </select>
+          </div>
           <div className="buttondiv">
           <button className="bagbutton" onClick={() => this.addToBag()}>
             Add to Bag

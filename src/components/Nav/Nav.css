@@ -34,10 +34,17 @@
 .bag {
     padding-bottom: 0;
 }
+.bag:hover {
+    color: #f30;
+}
+
 .loginbutton {
     padding-bottom: 0;
     padding-right: 20px;
     padding-left: 20px;
+}
+.loginbutton:hover {
+    color: #f30;
 }
 
 .navleft {
@@ -49,6 +56,9 @@
     padding-left: 48px;
     padding-right: 35px;
 }
+.left-button:hover {
+    color: #f30;
+}
 
 #allbuttons {
     border: none;
@@ -59,6 +69,7 @@
     font-size: 0.75429em;
     letter-spacing: .08em;
     outline: 0;
+    cursor: pointer;
 }
 
 

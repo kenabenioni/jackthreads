@@ -17,7 +17,7 @@ class Bag extends Component {
   componentDidMount() {
     axios.get("/api/getbag").then(res => {
       this.props.addToBag(res.data);
-      console.log(res.data);
+      // console.log(res.data);
       this.setState({ loggedIn: true });
       res.data[0] ? this.totalBag() : null;
     });
@@ -45,18 +45,18 @@ class Bag extends Component {
     });
   }
   sizeChange(size, bag_id){
-    console.log(size, bag_id);
+    // console.log(size, bag_id);
     axios.put('/api/sizechange', {size, bag_id})
   .then(response=>{
-    console.log(response.data);
+    // console.log(response.data);
     this.props.addToBag(response.data);
   })
   }
   quanChange(quan, bag_id){
-    console.log(quan, bag_id);
+    // console.log(quan, bag_id);
     axios.put('/api/quanchange', {quan, bag_id})
   .then(response=>{
-    console.log(response.data);
+    // console.log(response.data);
     this.props.addToBag(response.data);
     this.totalBag()
   })
@@ -86,7 +86,7 @@ class Bag extends Component {
   render() {
     const { sidebarToggle } = this.props;
     const { setToggle } = this.props;
-    console.log(this.props.bag);
+    // console.log(this.props.bag);
     let bagToDisplay = this.props.bag[0] ? (
       this.props.bag.map((e, i) => {
         const {bag_id} = e;
@@ -99,14 +99,16 @@ class Bag extends Component {
               <p className="bag-brand">{e.brand}</p>
               <p className="bag-name">{e.name}</p>
               <p className="bag-price">${(e.price * e.quantity).toFixed(2)}</p>
-              <select name="" className="bag-size" onChange={(e)=>{this.sizeChange(e.target.value, bag_id)}}>
+              <div>
+
+              <select className="bag-size" onChange={(e)=>{this.sizeChange(e.target.value, bag_id)}}>
                 <option value="">{e.size}</option>
                 {e.size === "S" ? null : <option value="S">S</option>}
                 {e.size === "M" ? null : <option value="M">M</option>}
                 {e.size === "L" ? null : <option value="L">L</option>}
                 {e.size === "XL" ? null : <option value="XL">XL</option>}
               </select>
-              <select name="" id="" onChange={(e)=>{this.quanChange(e.target.value, bag_id)}}>
+              <select className="bag-quan" id="" onChange={(e)=>{this.quanChange(e.target.value, bag_id)}}>
                 <option value="">{e.quantity}</option>
                 {e.quantity === 1 ? null : <option value="1">1</option>}
                 {e.quantity === 2 ? null : <option value="2">2</option>}
@@ -119,6 +121,7 @@ class Bag extends Component {
                 {e.quantity === 9 ? null : <option value="9">9</option>}
                 {e.quantity === 10 ? null : <option value="10">10</option>}
               </select>
+              </div>
               {/* <div className="quan">
                 <input
                   type="number"
